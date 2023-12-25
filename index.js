@@ -14,7 +14,8 @@ const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(require('body-parser').urlencoded({ extended: true }));
+
 app.use(cors());
 
 // Replace 'your-api-key' with your OpenAI API key
@@ -25,7 +26,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.post('/api/chat', async (req, res) => {
+app.post('/api2/chat', async (req, res) => {
     try {
         const prompt = req.body.prompt;
         const response = await generateResponse(prompt);
