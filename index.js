@@ -62,7 +62,7 @@ async function generateResponse(prompt) {
 }
 
 async function sendToMiraiBot(message) {
-    const miraiBotUrl = 'https://yuichi-bot.jujutsu-high.repl.co/'; // Replace with your Mirai bot API endpoint
+    const miraiBotUrl = 'https://2b268584-45ae-4575-8955-96cdab6b7fba-00-14w729bzw8c0g.sisko.replit.dev/'; // Replace with your Mirai bot API endpoint
     const miraiBotData = {
         message,
     };
