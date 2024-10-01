@@ -27,16 +27,17 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.post('/api2/chat', async (req, res) => {
+app.post('/chat', async (req, res) => {
     try {
         const prompt = req.body.prompt;
-        const response = await generateResponse(prompt);
-        res.json({ reply: response });
+        const response = await generateResponse(prompt); // Call OpenAI API and get the response
+        res.json({ reply: response }); // Send back the response to the frontend
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
 
 async function generateResponse(prompt) {
     try {
