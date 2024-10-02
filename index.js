@@ -1,4 +1,3 @@
-//modified 
 const express = require('express');
 const path = require('path');
 const { config } = require('dotenv');
@@ -16,11 +15,12 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 app.use(require('body-parser').urlencoded({ extended: true }));
-
 app.use(cors());
 
-// Replace 'your-api-key' with your OpenAI API key
-const openai = new OpenAI();
+// Initialize OpenAI with API key
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY, // Fetch the OpenAI API key from the environment variables
+});
 
 // Define routes or API endpoints
 app.get('/', (req, res) => {
@@ -37,7 +37,6 @@ app.post('/chat', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-
 
 async function generateResponse(prompt) {
     try {
@@ -69,7 +68,6 @@ async function sendToMiraiBot(message) {
 
     try {
         // Make a POST request to Mirai bot API
-        // Note: You may need to handle errors and responses appropriately
         await axios.post(miraiBotUrl, miraiBotData);
         console.log('Message sent to Mirai bot:', message);
     } catch (error) {
