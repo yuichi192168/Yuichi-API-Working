@@ -21,7 +21,7 @@ app.use(cors());
 // });
 
 const openai = new OpenAI({
-  apiKey: 'sk-5hdK7Axqynl6efelr0cGnsgTj3pBjRHT2dAYv4kIEET3BlbkFJWTtCuhLOjVJsSJ4gPXw6NAP1bjdoQsqlezIr20TfsA', // Replace with your actual API key
+  apiKey: 'sk-Zde5vFu1z0zdyiECNHS2Zx1WetW6IRVmW1_Xedm8LST3BlbkFJUlvsHZa1O7nE8b_UuDVBwj_ndPr8TKNJHpqDO1ONkA', // Replace with your actual API key
 });
 
 console.log('Loaded API Key:', process.env.OPENAI_API_KEY);
