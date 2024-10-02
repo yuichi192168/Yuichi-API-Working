@@ -19,7 +19,7 @@ app.use(cors());
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY, // Fetch the OpenAI API key from the environment variables
 });
-
+console.log('Loaded API Key:', process.env.OPENAI_API_KEY);
 // Serve the frontend (HTML, CSS, JS)
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serve index.html file
