@@ -16,9 +16,14 @@ app.use(express.json());
 app.use(cors());
 
 // Initialize OpenAI with API key
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY, // Fetch the OpenAI API key from the environment variables
+// });
+
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // Fetch the OpenAI API key from the environment variables
+  apiKey: 'sk-5hdK7Axqynl6efelr0cGnsgTj3pBjRHT2dAYv4kIEET3BlbkFJWTtCuhLOjVJsSJ4gPXw6NAP1bjdoQsqlezIr20TfsA', // Replace with your actual API key
 });
+
 console.log('Loaded API Key:', process.env.OPENAI_API_KEY);
 // Serve the frontend (HTML, CSS, JS)
 app.get('/', (req, res) => {
